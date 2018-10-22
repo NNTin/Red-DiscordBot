@@ -60,7 +60,7 @@ extras_require = {
         "sphinxcontrib-asyncio==0.2.0",
         "sphinxcontrib-websupport==1.1.0",
     ],
-    "voice": ["red-lavalink==0.1.2"],
+    "voice": ["red-lavalink==0.2.0"],
     "style": ["black==18.9b0", "click==7.0", "toml==0.9.6"],
 }
 
