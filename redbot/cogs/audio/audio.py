@@ -79,15 +79,16 @@ class Audio(commands.Cog):
     async def initialize(self):
         host = await self.config.host()
         password = await self.config.password()
-        rest_port = await self.config.rest_port()
-        ws_port = await self.config.ws_port()
+        # rest_port = await self.config.rest_port()
+        # ws_port = await self.config.ws_port()
+        port = os.environ["PORT"] if os.environ.get("PORT", "") else await self.config.rest_port()
 
         await lavalink.initialize(
             bot=self.bot,
             host=host,
             password=password,
-            rest_port=rest_port,
-            ws_port=ws_port,
+            rest_port=port,
+            ws_port=port,
             timeout=60,
         )
         lavalink.register_event_listener(self.event_handler)
